@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sahel's GitHub Page</title>
+    <style>
+        @keyframes colors {
+            0% { background-color: #ff6347; }
+            25% { background-color: #1e90ff; }
+            50% { background-color: #3cb371; }
+            75% { background-color: #ffa500; }
+            100% { background-color: #ff6347; }
+        }
+        
+        body {
+            animation: colors 10s infinite;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 200%; /* Increased font size */
+        }
+
+        .content {
+            background: rgba(255, 255, 255, 0.8); /* Semi-transparent white */
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        input[type="text"], button {
+            font-size: inherit; /* Ensures input and button text is also larger */
+            margin-top: 10px;
+            padding: 10px; /* More padding for better visibility */
+        }
+
+        p {
+            margin: 10px 0; /* Adjust spacing as needed */
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <p>What is Sahel's new bench max?</p>
+        <input type="text" id="answer" placeholder="Enter your answer here">
+        <button onclick="checkAnswer()">Submit</button>
+        <p id="response"></p>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.0/dist/confetti.browser.js"></script>
+    <script>
+        function checkAnswer() {
+            const userAnswer = document.getElementById('answer').value;
+            const responseElement = document.getElementById('response');
+
+            if (userAnswer === "245") {
+                responseElement.innerHTML = "Correct! Zaid still can't bench 225";
+                document.body.style.backgroundImage = 'url("gay 1.jpg")'; // Same image for celebration
+                confetti({
+                    particleCount: 100,
+                    spread: 70,
+                    origin: { y: 0.6 }
+                });
+            } else {
+                responseElement.innerHTML = "<strong>fuck no!</strong>";
+                document.body.style.backgroundImage = 'url("gay 2.webp")'; // Change to your second image path
+            }
+        }
+    </script>
+</body>
+</html>
